@@ -5,9 +5,7 @@ import mlflow # type: ignore
 
 
 class MLFlowTracker:
-  def __init__(self) -> None:
-    ...
-
+  
   def start_run(self):
     mlflow.start_run()
 
@@ -22,7 +20,8 @@ class MLFlowTracker:
 
 
 @contextmanager
-def start_tracker(tracker: MLFlowTracker):
+def start_tracker():
+  tracker = MLFlowTracker()
   tracker.start_run()
   try:
     yield tracker

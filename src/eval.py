@@ -38,7 +38,7 @@ def main(
   y = torch.tensor(test_data[:, 0]).long()
 
   model = MNISTClassifier()
-  model.load_state_dict(torch.load(model_path))
+  model.load_state_dict(torch.load(model_path, weights_only=True))
   model.eval()
 
   tracker = StdoutTracker()
