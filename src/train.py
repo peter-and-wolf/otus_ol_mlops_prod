@@ -8,7 +8,7 @@ from torch import nn
 import torchmetrics
 
 from loop import Loop
-from steps import TrainingStep, ValidationLoop
+from steps import TrainingStep, ValidationStep
 from model import MNISTClassifier
 from dataset import get_dataloaders
 
@@ -60,7 +60,7 @@ def main(
       optimizer=optimizer
     )
 
-    test_loop = ValidationLoop(
+    test_loop = ValidationStep(
       model=model,
       loss_fn=loss_fn,
       metric_fn=metric_fn,

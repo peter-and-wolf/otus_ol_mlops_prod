@@ -11,7 +11,6 @@ class MNISTClassifier(nn.Module):
       nn.ReLU(),
       nn.Flatten(),
       nn.LazyLinear(10), # 10 classes in total.
-      #nn.Linear(9216, 10),  # 10 classes in total.
     )
 
   def forward(self, x: torch.Tensor):

@@ -51,11 +51,11 @@ class TrainingStep(LoopStep):
     loss.backward()
     self.optimizer.step()
     self.optimizer.zero_grad()
-    self.tracker.log_metric(f'validation_loss', loss, num)
-    self.tracker.log_metric(f'validation_accuracy', accuracy, num)
+    self.tracker.log_metric(f'training_loss', loss, num)
+    self.tracker.log_metric(f'training_accuracy', accuracy, num)
 
 
-class ValidationLoop(LoopStep):
+class ValidationStep(LoopStep):
   def open(self):
     torch.set_grad_enabled(False)
 
